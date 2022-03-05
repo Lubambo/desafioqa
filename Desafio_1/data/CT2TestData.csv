@@ -1,0 +1,5 @@
+${browser};${estado};${especialidade};${localIndesejado};${pagina}
+chrome;Rio de Janeiro;Cardiologia;São Paulo/SP;3
+chrome;Rio de Janeiro;Cirurgia Plástica;São Paulo/SP;3
+firefox;Rio de Janeiro;Angiologia;São Paulo/SP;3
+firefox;Rio de Janeiro;Alergia e Imunologia;São Paulo/SP;3

@@ -1,0 +1,5 @@
+${browser};${estado};${especialidade};${ufEsperada}
+chrome;Rio de Janeiro;Cardiologia;RJ
+chrome;Rio de Janeiro;Cirurgia Plástica;RJ
+firefox;Rio de Janeiro;Angiologia;RJ
+chrome;Rio de Janeiro;Alergia e Imunologia;RJ
