@@ -1,0 +1,4 @@
+${movieId}	${expectedStatusCode}	${expectedTitle}	${expectedYear}	${expectedLanguage}
+tt1285016	200	The Social Network	2010	English, French
+tt0407887	200	The Departed	2006	English, Cantonese
+tt0120737	200	The Lord of the Rings: The Fellowship of the Ring	2001	English, Sindarin

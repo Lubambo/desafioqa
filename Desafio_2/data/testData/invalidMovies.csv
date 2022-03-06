@@ -1,0 +1,3 @@
+${movieId}	${responseExists}	${expectedStatusCode}	${errorMsg}
+000000000	False	200	Error getting data.
+${EMPTY}	False	200	Incorrect IMDb ID.
