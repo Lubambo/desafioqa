@@ -76,6 +76,8 @@ Para executar os testes é necessário antes pereparar o ambiente para os testes
 | Formulário | `formTest` | `robot -i form -d ./output ./tests` |
 | Todos os testes | - | `robot -i all -d ./output ./tests` |
 
+> **Obs.:** é aconselhável executar um teste por vez, pois, quando executados todos de uma vez, pode acontecer timeout na execução do app no emulador, causando falha nos testes.
+
 ## Relatório de Testes e Evidências
 
 O `Robot Framework` gera um relatório ao final da execução dos testes, nele é possível visualizar os passos e seus resultados de cada teste. As imagens para evidências podem ser visualizadas no próprio relatório.
