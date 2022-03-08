@@ -1,0 +1,6 @@
+${validSearch}	${inputName}	${testDescription}
+False	Fulano Inexistente	[invalido]: nome inexistente
+False	${SPACE * 5}	[invalido]: nome invalido
+False	${EMPTY}	[invalido]: nome vazio
+True	${project.get('customVariable', 'getFromList')}	[valido]: nome existente
+True	me	[valido]: nome parcial existente

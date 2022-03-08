@@ -1,0 +1,6 @@
+${validLogin}	${user}	${password}	${testDescription}
+False	teste	123	[invalido]: usuario e senha incorretos
+False	admin	${EMPTY}	[invalido]: senha vazia
+False	${EMPTY}	admin	[invalido]: usuario vazio
+False	${EMPTY}	${EMPTY}	[invalido]: usuario e senha vazios
+True	${project.get('user', 'login')}	${project.get('user', 'password')}	[valido]
