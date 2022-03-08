@@ -1,19 +1,21 @@
-# Desafio 1
+# Desafio 2
 
 ## Descrição do Projeto
 
 O projeto está dividido em:
 
-- `data`: contém os dados de teste dentro de arquivos `.csv`;
+- `data`: contém os dados de teste e validação dentro das suas respectivas pastas
+  - `jsonSchemas`: contém esquemas de json para validar o payload das response recebidas;
+  - `testData`: contém os dados de testes, consumidos pela lib [`DataDriver`](https://github.com/Snooz82/robotframework-datadriver);
 
-- `pageObjects`: possui o mapeamento dos elementos `HTML` das páginas que envolvem os testes;
+- `resource`: contém os arquivos que auxiliam a escrita dos testes;
 
-- `spec`: contém as especificações dos testes, cada arquivo de especificação é nomeado da mesma forma que o arquivo de chamada do teste (encontrado na pasta `tests`);
-  - O arquivos de especificação seguem o mesmo padrão de escrita, contendo as `keywords` responsáveis pelos comportamentos do usuário e por último, uma `keyword` principal que chama as outras e descreve o teste utilizando a técnica `BDD`, esta é nomeada seguindo o padrão `nome do teste` + `BDD Spec`, apenas para facilitar o entendimento e localização do teste.
+- `spec`: contém as especificações dos testes. Os arquivos são nomeados da mesma forma do respectivo arquivo responsável pela chamada do teste (encontrado na pasta `tests`);
 
-- `tests`: os arquivos de testes que serão chamados encontram-se nesta pasta. Cada arquivo utiliza a lib [`DataDriver`](https://github.com/Snooz82/robotframework-datadriver) para associar o arquivo aos dados de testes (`.csv`);
+- `tests`: contém os arquivos de chamada dos testes;
+  - Cada arquivo utiliza a lib [`DataDriver`](https://github.com/Snooz82/robotframework-datadriver) para associar o arquivo aos dados de testes (`.csv`);
 
-- `project.properties`: reúne as variáveis de projeto (no caso deste projeto, contém apenas a `url` padrão utilizada durante os testes);
+- `project.properties`: reúne as variáveis de projeto (no caso deste projeto, contém apenas a `url` padrão da API, a `ID_DO_FILME` e `API_KEY`);
 
 - `locators.py`: utiliza a lib `Config Parser` para que as variáveis do projeto possam ser chamadas nos arquivos de teste;
 
@@ -25,16 +27,28 @@ Para executar os testes, é requerido:
 
 - [Python v3+](https://www.python.org/downloads/);
 
-- [Robot Framework](https://robotframework.org/?tab=1#getting-started);
+- [Python lib - JsonSchema](https://pypi.org/project/jsonschema/);
 
-- [Robot Framework - Selenium Library](https://github.com/robotframework/SeleniumLibrary/#installation);
+- [Robot Framework](https://robotframework.org/?tab=1#getting-started);
 
 - [Robot Framework - DataDriver](https://github.com/Snooz82/robotframework-datadriver#installation);
 
+- [Robot Framework - Request Library](https://github.com/MarketSquare/robotframework-requests#readme).
+
 ## Execução dos Testes
 
-No console, utilize:
+Para executar os testes é necessário antes pereparar o ambiente para os testes seguindo os passos abaixo:
 
-- Para executar a validação 1 do desafio: `robot -i ct1 -d ./output ./tests`;
-- Para executar a validação 2 do desafio: `robot -i ct2 -d ./output ./tests`;
-- Para executar todas as validações do desafio: `robot -i all -d ./output ./tests`.
+1. Acesse o diretório do projeto e utilize a tabela abaixo para execturar os testes:
+
+| Validação | Nome do arquivo | Comando |
+| --- | --- | --- |
+| Verifica se o filme obtido pelo endpoint possui os valores esperados para título, ano e idioma | `CT1` | `robot -i ct1 -d ./output ./tests` |
+| Verifica se a response obtida pelo endpoint de filme inválido corresponde às propriedades esperadas | `CT2` | `robot -i ct2 -d ./output ./tests` |
+| Todos os testes | - | `robot -i all -d ./output ./tests` |
+
+## Relatório de Testes
+
+O `Robot Framework` gera um relatório ao final da execução dos testes, nele é possível visualizar os passos e seus resultados de cada teste.
+
+É possível encontrá-lo na pasta `output`. Para visualizar basta abrir o arquivo `log.html` no navegador.

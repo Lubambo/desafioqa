@@ -25,6 +25,8 @@ Para executar os testes, é requerido:
 
 - [Python v3+](https://www.python.org/downloads/);
 
+- [Python lib - JsonSchema](https://pypi.org/project/jsonschema/);
+
 - [Robot Framework](https://robotframework.org/?tab=1#getting-started);
 
 - [Robot Framework - Selenium Library](https://github.com/robotframework/SeleniumLibrary/#installation);
@@ -33,8 +35,16 @@ Para executar os testes, é requerido:
 
 ## Execução dos Testes
 
-No console, utilize:
+Para executar os testes, acesse o diretório do projeto e utilize a tabela abaixo para execturar os testes:
 
-- Para executar a validação 1 do desafio: `robot -i ct1 -d ./output ./tests`;
-- Para executar a validação 2 do desafio: `robot -i ct2 -d ./output ./tests`;
-- Para executar todas as validações do desafio: `robot -i all -d ./output ./tests`.
+| Validação | Nome do arquivo | Comando |
+| --- | --- | --- |
+| Verifica se o resultado obtido na pesquisa retorna itens com cidade e especialidade esperados | `CT1` | `robot -i ct1 -d ./output ./tests` |
+| Verifica se o resultado obtido na pesquisa não retorna itens com cidade São Paulo/SP até a página informada | `CT2` | `robot -i ct2 -d ./output ./tests` |
+| Todos os testes | - | `robot -i all -d ./output ./tests` |
+
+## Relatório de Testes
+
+O `Robot Framework` gera um relatório ao final da execução dos testes, nele é possível visualizar os passos e seus resultados de cada teste.
+
+É possível encontrá-lo na pasta `output`. Para visualizar basta abrir o arquivo `log.html` no navegador.

@@ -50,18 +50,18 @@ Para executar os testes é necessário antes pereparar o ambiente para os testes
 2. Espere o emulador iniciar por completo, abra o console e execute o comando `adb devices` para visualizar a id do emulador, utilizada na propriedade `udid` requerida para iniciar a aplicação no servidor local do `Appium`;
 
 3. Abra o `Appium Inspector`:
-1. Na aba `Appium Server`, insira no input `Remote Path` o valor `/wd/hub`;
-2. Insira as `Desired Capabilities` para que forme o `json` abaixo na seção `Android`
+    1. Na aba `Appium Server`, insira no input `Remote Path` o valor `/wd/hub`;
+    2. Insira as `Desired Capabilities` para que forme o `json` abaixo na seção `Android`
 
-  ```json
-  {
-    "automationName": "UiAutomator2",
-    "platformName": "Android",
-    "deviceName": "Pixel2",
-    "app": "diretório_do_orojeto\\app\\NoesisQuaChallenge.apk",
-    "udid": "udid_adquirida_no_passo_2"
-  }
-  ```
+    ```json
+    {
+      "automationName": "UiAutomator2",
+      "platformName": "Android",
+      "deviceName": "Pixel2",
+      "app": "diretório_do_orojeto\\app\\NoesisQuaChallenge.apk",
+      "udid": "udid_adquirida_no_passo_2"
+    }
+    ```
 
 4. Inicie o servidor local do `Appium` utilizando o comando `appium --base-path /wd/hub`:
 
@@ -74,8 +74,10 @@ Para executar os testes é necessário antes pereparar o ambiente para os testes
 | Login de acesso | `loginTest` | `robot -i login -d ./output ./tests` |
 | Lista de registros | `listaTest` | `robot -i lista -d ./output ./tests` |
 | Formulário | `formTest` | `robot -i form -d ./output ./tests` |
-| Login de acesso | `loginTest` | `robot -i all -d ./output ./tests` |
+| Todos os testes | - | `robot -i all -d ./output ./tests` |
 
 ## Relatório de Testes e Evidências
 
 O `Robot Framework` gera um relatório ao final da execução dos testes, nele é possível visualizar os passos e seus resultados de cada teste. As imagens para evidências podem ser visualizadas no próprio relatório.
+
+É possível encontrá-lo na pasta `output`. Para visualizar basta abrir o arquivo `log.html` no navegador.
